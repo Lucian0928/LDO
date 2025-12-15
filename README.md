@@ -116,3 +116,38 @@ The LDO system consists of:
 | Current Efficiency @ 100 mA | 99.8687 % | 99.8146 % |
 
 ---
+
+## Load Transient (blue: pre-simulation/ red: post-simulation)
+
+![load_transient](figures/load_transient.png)
+
+---
+
+## Rcovery time (blue: pre-simulation/ red: post-simulation)
+<table>
+  <tr>
+    <td align="center"><b></b></td>
+    <td align="center"><b>Pre-Simulation</b></td>
+    <td align="center"><b>Post-Simulation</b></td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>H → L</b></td>
+    <td>
+      <img src="figures/HtoL_pre.png" width="320">
+    </td>
+    <td>
+      <img src="figures/HtoL_post.png" width="320">
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center"><b>L → H</b></td>
+    <td>
+      <img src="figures/LtoH_pre.png" width="320">
+    </td>
+    <td>
+      <img src="figures/LtoH_post.png" width="320">
+    </td>
+  </tr>
+
