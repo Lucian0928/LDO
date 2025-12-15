@@ -1,18 +1,8 @@
-# LDO with I/O Pad Design (UMC 0.18 µm CMOS)
-
 ## Design Objective
 
 This project presents the design, simulation, and layout verification of a **low-dropout regulator (LDO) with integrated I/O pads**, targeting **low-noise analog supply generation** for mixed-signal systems.
 
 The design integrates a **bandgap reference** and a **high-gain error amplifier**, and focuses on **system-level stability, transient performance, and layout robustness under heavy load conditions**.
-
-### Design Targets
-
-- Stable regulated output voltage under wide load range  
-- Fast transient recovery with minimal overshoot and undershoot  
-- Robust stability across light and heavy load conditions  
-- Proper operation with realistic **I/O pad parasitics**  
-- DRC/LVS-clean layout with current density and thermal considerations  
 
 ---
 
@@ -42,28 +32,12 @@ The LDO system consists of:
 
 ---
 
-## Supply & Operating Conditions
-
-| Parameter | Value |
-|---------|------|
-| Process | UMC 0.18 µm CMOS |
-| VIN (VDD) | 1.8 – 2.0 V |
-| VOUT (Target) | 1.5 V |
-| Load Current Range | 1 mA – 200 mA |
-| Load Capacitor (CL) | 4.7 µF (off-chip) |
-| ESR | 0 – 5 Ω |
-| Temperature | 60 °C |
-| Corner | TT (simulation requirement) |
-
----
-
 ## Design Methodology
 
 ### 1. Pass Device Sizing
 
 - Initial sizing was estimated assuming:
-  - \( V_{OUT} = 1.5 \, \text{V} \)
-  - \( V_{GP} \approx 0.9 \, \text{V} \)
+  - assume $V_{OUT}=1.5V and V_{GP} \approx 0.9V$
 - Required PMOS width was first estimated to meet **200 mA load current**
 - To reduce excessive parasitic capacitance:
   - Error amplifier RC compensation was removed
@@ -74,7 +48,6 @@ The LDO system consists of:
   - Transient response
 
 ---
-
 ### 2. Stability Considerations
 
 - Loop stability was evaluated using **STB analysis** with `iprobe`
@@ -98,41 +71,48 @@ The LDO system consists of:
 
 ---
 
+## Supply & Operating Conditions
+
+| Parameter | Value |
+|:---------:|:-----:|
+| Process | UMC18 CMOS |
+| VIN (VDD) | 1.8 – 2.0 V |
+| VOUT | ~1.5 V |
+| Load Current Range | 1 mA – 200 mA |
+| Load Capacitor (CL) | 4.7 µF (off-chip) |
+| ESR | 0 – 5 Ω |
+| Temperature | 60 °C |
+| Corner | TT (simulation requirement) |
+
+---
+
+## Device Parameters
+| Parameter | Value |
+|:---------:|:-----:|
+| $R_{F1}$ | 30.0327kΩ |
+| $R_{F2}$ | 127.358kΩ |
+| $C_{L}$ | 4.7µ𝐹|
+| $R_{CESR}$ | 50mΩ |
+| $M_{P}$ | 100µ/0.18µ, mul=44 |
+| MUX | PMOS:2µ/1µ, NMOS:1µ/1µ |
+
+---
+
 ## Performance Summary
 
-### DC & Regulation Performance
-
-| Metric | Specification | Result |
-|------|--------------|--------|
-| Output Voltage @ 100 mA | 1.495 – 1.505 V | Pass |
-| Line Regulation | < 40 mV/V | Pass |
-| Load Regulation | < 100 mV/A | Pass |
-| Quiescent Current (IQ) | Optimized | Pass |
-
----
-
-### Transient Performance
-
-| Metric | Specification | Result |
-|------|--------------|--------|
-| Overshoot Voltage | < 25 mV | Pass |
-| Undershoot Voltage | < 25 mV | Pass |
-| Recovery Time (H→L) | < 20 µs | Pass |
-| Recovery Time (L→H) | < 20 µs | Pass |
+| Parameters | Pre-Simulation | Post-Simulation |
+|:------:|:--------------:|:---------------:|
+| VIN (VDD) | 1.8 – 2.0 V | 1.8 – 2.0 V |
+| VOUT @ 100 mA | 1.50382 V | 1.50359 V |
+| VREF (Bandgap Output) | 1.21404 V | 1.21301 V |
+| Quiescent Current (IQ) | 120.758 µA | 176.174 µA |
+| Overshoot Voltage | 1.75214 mV | 3.43333 mV |
+| Undershoot Voltage | 2.10554 mV | 3.07700 mV |
+| Recovery Time (H → L) | 1.36452 µs | 1.18078 µs |
+| Recovery Time (L → H) | 1.09962 µs | 1.06912 µs |
+| Line Regulation | 10.9713 mV/V | 11.1964 mV/V |
+| Load Regulation | 3.36286 mV/A | 11.1415 mV/A |
+| Power Efficiency @ 100 mA | 83.2040 % | 83.0744 % |
+| Current Efficiency @ 100 mA | 99.8687 % | 99.8146 % |
 
 ---
-
-### AC Stability
-
-| Load Condition | DC Gain | Phase Margin |
-|--------------|--------|-------------|
-| Light Load (1 mA) | Verified | > 40° |
-| Heavy Load (200 mA) | Verified | > 40° |
-
----
-
-### Efficiency & Area
-
-| Metric | Value |
-|------|------|
-| Power Efficiency |
