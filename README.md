@@ -126,10 +126,10 @@ The LDO system consists of:
 
   <tr>
     <td>
-      <img src="figures/1m_PM.png" width="320">
+      <img src="figures/1m_PM.png" width="400">
     </td>
     <td>
-      <img src="figures/200m_PM.png" width="320">
+      <img src="figures/200m_PM.png" width="400">
     </td>
   </tr>
 <table>
