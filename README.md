@@ -132,6 +132,7 @@ The LDO system consists of:
       <img src="figures/200m_PM.png" width="320">
     </td>
   </tr>
+<table>
 
 ---
 
@@ -168,6 +169,7 @@ The LDO system consists of:
       <img src="figures/LtoH_post.png" width="320">
     </td>
   </tr>
+<table>
 
 ---
 
