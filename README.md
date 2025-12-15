@@ -117,6 +117,24 @@ The LDO system consists of:
 
 ---
 
+## Loop Gain
+<table>
+  <tr>
+    <td align="center"><b>Iout=1mA</b></td>
+    <td align="center"><b>Iout=200mA</b></td>
+  </tr>
+
+  <tr>
+    <td>
+      <img src="figures/1m_PM.png" width="320">
+    </td>
+    <td>
+      <img src="figures/200m_PM.png" width="320">
+    </td>
+  </tr>
+
+---
+
 ## Load Transient (blue: pre-simulation/ red: post-simulation)
 
 ![load_transient](figures/load_transient.png)
@@ -156,23 +174,5 @@ The LDO system consists of:
 ## Line regulation (blue: pre-simulation/ red: post-simulation)
 
 ![line_regulation](figures/line_regulation.png)
-
----
-
-## Loop Gain
-<table>
-  <tr>
-    <td align="center"><b>Iout=1mA</b></td>
-    <td align="center"><b>Iout=200mA</b></td>
-  </tr>
-
-  <tr>
-    <td>
-      <img src="figures/1m_PM.png" width="320">
-    </td>
-    <td>
-      <img src="figures/200m_PM.png" width="320">
-    </td>
-  </tr>
 
 ---
