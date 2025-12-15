@@ -134,20 +134,20 @@ The LDO system consists of:
   <tr>
     <td align="center"><b>H → L</b></td>
     <td>
-      <img src="figures/HtoL_pre.png" width="500">
+      <img src="figures/HtoL_pre.png" width="320">
     </td>
     <td>
-      <img src="figures/HtoL_post.png" width="500">
+      <img src="figures/HtoL_post.png" width="320">
     </td>
   </tr>
 
   <tr>
     <td align="center"><b>L → H</b></td>
     <td>
-      <img src="figures/LtoH_pre.png" width="500">
+      <img src="figures/LtoH_pre.png" width="320">
     </td>
     <td>
-      <img src="figures/LtoH_post.png" width="500">
+      <img src="figures/LtoH_post.png" width="320">
     </td>
   </tr>
 
