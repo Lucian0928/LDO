@@ -8,7 +8,7 @@ The design integrates a **bandgap reference** and a **high-gain error amplifier*
 
 ## System Architecture Overview
 
-<img src="figures/architecture.png" width="700">
+<img src="figures/architecture.png" width="1000">
 
 The LDO system consists of:
 
